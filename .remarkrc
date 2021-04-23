@@ -1,0 +1,40 @@
+{
+    "settings": {
+        "listItemIndent": "mixed",
+        "emphasis": "*"
+    },
+    "plugins": [
+        "copywriting-correct",
+        "preset-lint-markdown-style-guide",
+        [
+            "lint-list-item-spacing",
+            false
+        ],
+        [
+            "lint-list-item-indent",
+            false
+        ],
+        [
+            "lint-no-emphasis-as-heading",
+            false
+        ],
+        [
+            "lint-code-block-style",
+            false
+        ],
+        [
+            "lint-maximum-line-length",
+            false
+        ],
+        [
+            "lint-ordered-list-marker-value",
+            "ordered"
+        ],
+        "math",
+        "math-space",
+        "lint-final-newline",
+        "lint-no-tabs",
+        "clang-format",
+        "footnotes"
+    ]
+}

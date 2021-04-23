@@ -1,0 +1,34 @@
+{
+  "name": "arielheleneto/seat-mumble",
+  "description": "This plugin provide an extension to the standard SeAT character Job which handle automatic graduation for Mumble user",
+  "type": "seat-plugin",
+  "license": "GPL-3.0-or-later",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "authors": [
+    {
+      "name": "Warlof Tutsimo",
+      "email": "loic.leuilliot@gmail.com"
+    },
+    {
+      "name": "Ariel Heleneto",
+      "email": "xiongjiahui2004@foxmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Warlof\\Seat\\Connector\\Drivers\\Mumble\\": "src/"
+    }
+  },
+  "require": {
+    "ext-json": "*",
+    "warlof/seat-connector": "^2.1"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Warlof\\Seat\\Connector\\Drivers\\Mumble\\MumbleConnectorServiceProvider"
+      ]
+    }
+  }
+}

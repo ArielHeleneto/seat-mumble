@@ -17,17 +17,16 @@
   ],
   "autoload": {
     "psr-4": {
-      "Warlof\\Seat\\Connector\\Drivers\\Mumble\\": "src/"
+      "ArielHeleneto\\Seat\\Connector\\Drivers\\Mumble\\": "src/"
     }
   },
   "require": {
-    "ext-json": "*",
     "warlof/seat-connector": "^2.1"
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Warlof\\Seat\\Connector\\Drivers\\Mumble\\MumbleConnectorServiceProvider"
+        "ArielHeleneto\\Seat\\Connector\\Drivers\\Mumble\\MumbleConnectorServiceProvider"
       ]
     }
   }

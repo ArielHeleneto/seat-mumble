@@ -26,7 +26,7 @@ use Seat\Services\AbstractSeatPlugin;
 /**
  * Class MumbleConnectorServiceProvider.
  *
- * @package Warlof\Seat\Connector\Drivers\Mumble
+ * @package ArielHeleneto\Seat\Connector\Drivers\Mumble
  */
 class MumbleConnectorServiceProvider extends AbstractSeatPlugin
 {

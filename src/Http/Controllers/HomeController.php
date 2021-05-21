@@ -18,6 +18,23 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-return [
-    'version' => '0.0.1-dev',
-];
+namespace ArielHeleneto\Seat\Mumble\Http\Controllers;
+
+use Seat\Web\Http\Controllers\Controller;
+
+/**
+ * Class HomeController.
+ *
+ * @package Author\Seat\YourPackage\Http\Controllers
+ */
+class HomeController extends Controller
+{
+
+    /**
+     * @return \Illuminate\View\View
+     */
+    public function getHome()
+    {
+        return view('mumble::myview');
+    }
+}

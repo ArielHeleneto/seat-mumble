@@ -19,5 +19,26 @@
  */
 
 return [
-    'version' => '0.0.1-dev',
+    'mumble' => [
+        'name' => 'Mumble Management',
+        'permission' => 'mumble.view',
+        'route_segment' => 'mumble',
+        'icon' => 'fas fa-headset',
+        'entries'       => [
+            'account' => [
+                'name' => 'account',
+                'icon' => 'fas fa-address-card',
+                'route_segment' => 'mumble',
+                'route' => 'mumble.view',
+                'permission' => 'mumble.view'
+            ],
+            'tagger' => [
+                'name' => 'tagger',
+                'icon' => 'fas fa-list',
+                'route_segment' => 'mumble',
+                'route' => 'mumble.tagger',
+                'permission' => 'mumble.tag'
+            ],
+        ]
+    ],
 ];

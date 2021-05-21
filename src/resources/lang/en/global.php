@@ -1,4 +1,5 @@
 <?php
+
 /*
  * This file is part of SeAT.
  * Copyright (C) 2021 to 2021 Ariel Heleneto.
@@ -19,5 +20,7 @@
  */
 
 return [
-    'version' => '0.0.1-dev',
+    'browser_title' => 'Browser Title',
+    'page_title' => 'Page Title',
+    'page_subtitle' => 'Page Sub-title',
 ];

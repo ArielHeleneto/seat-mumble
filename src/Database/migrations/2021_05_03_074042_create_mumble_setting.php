@@ -22,7 +22,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMumbleUserTable extends Migration
+class CreateMumbleUserSetting extends Migration
 {
     /**
      * Run the migrations.
@@ -31,7 +31,7 @@ class CreateMumbleUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('mumble_mumbleuser', function (Blueprint $table) {
+        Schema::create('mumble_setting', function (Blueprint $table) {
             $table->integer('user_id');
             $table->char('username', 254);
             $table->char('pwhash', 254);
@@ -50,6 +50,6 @@ class CreateMumbleUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfexists('mumble_mumbleuser');
+        Schema::dropIfexists('mumble_setting');
     }
 }

@@ -27,11 +27,11 @@ use Seat\Services\Exceptions\SettingException;
 use Warlof\Seat\Connector\Drivers\IClient;
 use Warlof\Seat\Connector\Drivers\ISet;
 use Warlof\Seat\Connector\Drivers\IUser;
-use Warlof\Seat\Connector\Drivers\Mumble\Exceptions\CommandException;
-use Warlof\Seat\Connector\Drivers\Mumble\Exceptions\ConnexionException;
-use Warlof\Seat\Connector\Drivers\Mumble\Exceptions\LoginException;
-use Warlof\Seat\Connector\Drivers\Mumble\Exceptions\ServerException;
-use Warlof\Seat\Connector\Drivers\Mumble\Exceptions\MumbleException;
+use ArielHeleneto\Seat\Connector\Drivers\Mumble\Exceptions\CommandException;
+use ArielHeleneto\Seat\Connector\Drivers\Mumble\Exceptions\ConnexionException;
+use ArielHeleneto\Seat\Connector\Drivers\Mumble\Exceptions\LoginException;
+use ArielHeleneto\Seat\Connector\Drivers\Mumble\Exceptions\ServerException;
+use ArielHeleneto\Seat\Connector\Drivers\Mumble\Exceptions\MumbleException;
 use Warlof\Seat\Connector\Exceptions\DriverException;
 use Warlof\Seat\Connector\Exceptions\DriverSettingsException;
 use Warlof\Seat\Connector\Exceptions\InvalidDriverIdentityException;
@@ -39,17 +39,17 @@ use Warlof\Seat\Connector\Exceptions\InvalidDriverIdentityException;
 /**
  * Class MumbleClient.
  *
- * @package Warlof\Seat\Connector\Drivers\Mumble\Driver
+ * @package ArielHeleneto\Seat\Connector\Drivers\Mumble\Driver
  */
 class MumbleClient implements IClient
 {
     /**
-     * @var \Warlof\Seat\Connector\Drivers\Mumble\Driver\MumbleClient
+     * @var \ArielHeleneto\Seat\Connector\Drivers\Mumble\Driver\MumbleClient
      */
     private static $instance;
 
     /**
-     * @var \Warlof\Seat\Connector\Drivers\IUser[]
+     * @var \ArielHeleneto\Seat\Connector\Drivers\IUser[]
      */
     private $speakers;
 

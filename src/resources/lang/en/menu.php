@@ -1,4 +1,5 @@
 <?php
+
 /*
  * This file is part of SeAT.
  * Copyright (C) 2021 to 2021 Ariel Heleneto.
@@ -19,5 +20,6 @@
  */
 
 return [
-    'version' => '0.0.1-dev',
+    'main_level' => 'Your Package Menu',
+    'sub_level' => 'Your Package Sub-Menu',
 ];

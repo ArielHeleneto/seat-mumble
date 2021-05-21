@@ -1,4 +1,5 @@
 <?php
+
 /*
  * This file is part of SeAT.
  * Copyright (C) 2021 to 2021 Ariel Heleneto.
@@ -19,5 +20,7 @@
  */
 
 return [
-    'version' => '0.0.1-dev',
+    'Mumble Management' => 'Mumble 账户管理',
+    'account' => '账户',
+    'Tagger'=>'后缀设置',
 ];

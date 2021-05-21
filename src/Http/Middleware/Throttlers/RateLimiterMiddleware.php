@@ -29,7 +29,7 @@ use Psr\Http\Message\UriInterface;
 /**
  * Class RateLimiterMiddleware.
  *
- * @package Warlof\Seat\Connector\Drivers\Mumble\Http\Middleware\Throttlers
+ * @package ArielHeleneto\Seat\Connector\Drivers\Mumble\Http\Middleware\Throttlers
  */
 class RateLimiterMiddleware
 {

@@ -1,56 +1,37 @@
 <?php
-
-/**
- * This file is part of SeAT Teamspeak Connector.
+/*
+ * This file is part of SeAT.
+ * Copyright (C) 2021 to 2021 Ariel Heleneto.
  *
- * Copyright (C) 2018  Warlof Tutsimo <loic.leuilliot@gmail.com>
- *
- * SeAT Teamspeak Connector  is free software: you can redistribute it and/or modify
+ * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * any later version.
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
  *
- * SeAT Teamspeak Connector is distributed in the hope that it will be useful,
+ * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
+// Namespace all of the routes for this package.
 Route::group([
-    'namespace'  => 'ArielHeleneto\Seat\Connector\Drivers\Mumble\Http\Controllers',
-    'prefix'     => 'seat-connector',
-    'middleware' => ['web', 'auth', 'locale'],
+    'namespace' => 'ArielHeleneto\Seat\Mumble\Http\Controllers',
+    'middleware' => ['web', 'auth'],
 ], function () {
-
-    Route::group([
-        'prefix' => 'registration',
-    ], function () {
-
-        Route::get('/mumble', [
-            'as'   => 'seat-connector.drivers.mumble.registration',
-            'uses' => 'RegistrationController@redirectToProvider',
-        ]);
-
-        Route::post('/tmumble', [
-            'as'   => 'seat-connector.drivers.mumble.registration.callback',
-            'uses' => 'RegistrationController@handleProviderCallback',
-        ]);
-
-    });
-
-    Route::group([
-        'prefix' => 'settings',
-        'middleware' => 'can:global.superuser',
-    ], function () {
-
-        Route::post('/mumble', [
-            'as' => 'seat-connector.drivers.mumble.settings',
-            'uses' => 'SettingsController@store',
-        ]);
-
-    });
-
+    // Your route definitions go here.
+    Route::get('/mumble/account', [
+        'as' => 'mumble.view',
+        'uses' => 'HomeController@getHome',
+        'middleware' => 'can:mumble.view'
+    ]);
+    Route::get('/mumble/tag', [
+        'as' => 'mumble.tagger',
+        'uses' => 'HomeController@getHome',
+        'middleware' => 'can:mumble.tag'
+    ]);
 });

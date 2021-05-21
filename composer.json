@@ -1,33 +1,34 @@
 {
-  "name": "arielheleneto/seat-mumble",
-  "description": "This plugin provide an extension to the standard SeAT character Job which handle automatic graduation for Mumble user",
-  "type": "seat-plugin",
-  "license": "GPL-3.0-or-later",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "authors": [
-    {
-      "name": "Warlof Tutsimo",
-      "email": "loic.leuilliot@gmail.com"
+    "name": "arielheleneto/seat-mumble",
+    "description": "This plugin provide an extension to the standard SeAT character Job which handle automatic graduation for Mumble user",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Ariel Heleneto",
+            "email": "xiongjiahui2004@foxmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ArielHeleneto\\Seat\\Mumble\\": "src/"
+        }
     },
-    {
-      "name": "Ariel Heleneto",
-      "email": "xiongjiahui2004@foxmail.com"
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.3",
+        "laravel/framework": "^6.2",
+        "eveseat/web": "^4.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "orchestra/database": "^4.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ArielHeleneto\\Seat\\Mumble\\MumbleServiceProvider"
+            ]
+        }
     }
-  ],
-  "autoload": {
-    "psr-4": {
-      "ArielHeleneto\\Seat\\Connector\\Drivers\\Mumble\\": "src/"
-    }
-  },
-  "require": {
-    "warlof/seat-connector": "^2.1"
-  },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "ArielHeleneto\\Seat\\Connector\\Drivers\\Mumble\\MumbleConnectorServiceProvider"
-      ]
-    }
-  }
 }

@@ -1,4 +1,5 @@
 <?php
+
 /*
  * This file is part of SeAT.
  * Copyright (C) 2021 to 2021 Ariel Heleneto.
@@ -19,5 +20,12 @@
  */
 
 return [
-    'version' => '0.0.1-dev',
+    'view' => [
+        'label' => 'View Mumble system',
+        'description' => 'Ability to see Mumble system page',
+    ],
+    'tag' => [
+        'label' => 'Tag management',
+        'description' => 'Ability to manage tags'
+    ],
 ];

@@ -1,8 +1,7 @@
 <?php
-
 /*
  * This file is part of SeAT.
- * Copyright (C) 2021 to 2021 Ariel Heleneto.
+ * Copyright (C) 2021 to 2021 Ariel Heleneto<xiongjiahui2004@foxmail.com>.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,12 +19,7 @@
  */
 
 return [
-    'view' => [
-        'label' => 'mumble::permission.view',
-        'description' => 'mumble::permission.view_dec',
-    ],
-    'tag' => [
-        'label' => 'mumble::permission.tag',
-        'description' => 'mumble::permission.tag_dec'
-    ],
+    'view' => 'View Mumble system',
+    'view_dec'=>'Ability to see Mumble system page',
+    'tag' => 'Tag Management','tag_dec' => 'Ability to manage tags',
 ];

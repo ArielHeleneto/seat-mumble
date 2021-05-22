@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of SeAT.
  * Copyright (C) 2021 to 2021 Ariel Heleneto.
@@ -19,13 +18,23 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-return [
-    'view' => [
-        'label' => 'mumble::permission.view',
-        'description' => 'mumble::permission.view_dec',
-    ],
-    'tag' => [
-        'label' => 'mumble::permission.tag',
-        'description' => 'mumble::permission.tag_dec'
-    ],
-];
+namespace ArielHeleneto\Seat\Mumble\Http\Controllers;
+
+use Seat\Web\Http\Controllers\Controller;
+
+/**
+ * Class UserController.
+ *
+ * @package Author\Seat\YourPackage\Http\Controllers
+ */
+class TagController extends Controller
+{
+
+    /**
+     * @return \Illuminate\View\View
+     */
+    public function getAccount()
+    {
+        return view('mumble::account');
+    }
+}

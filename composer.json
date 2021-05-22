@@ -11,7 +11,9 @@
     "autoload": {
         "psr-4": {
             "ArielHeleneto\\Seat\\Mumble\\": "src/"
-        }
+        },"files": [
+            "src/Helpers/Helper.php"
+        ]
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

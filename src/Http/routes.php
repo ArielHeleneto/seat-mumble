@@ -18,20 +18,43 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-// Namespace all of the routes for this package.
 Route::group([
     'namespace' => 'ArielHeleneto\Seat\Mumble\Http\Controllers',
-    'middleware' => ['web', 'auth'],
+    'middleware' => ['web', 'auth', 'locale'],
+    'prefix' => 'mumble'
 ], function () {
-    // Your route definitions go here.
-    Route::get('/mumble/account', [
+
+    // Menu & Views
+    Route::get('/account', [
         'as' => 'mumble.view',
-        'uses' => 'HomeController@getHome',
+        'uses' => 'UserController@getAccount',
         'middleware' => 'can:mumble.view'
     ]);
-    Route::get('/mumble/tag', [
+    Route::get('/tag', [
         'as' => 'mumble.tagger',
-        'uses' => 'HomeController@getHome',
+        'uses' => 'UserController@getAccount',
         'middleware' => 'can:mumble.tag'
     ]);
+
+    //Account
+    Route::group([
+        'middleware' => ['web', 'auth', 'locale'],
+    ], function () {
+
+        Route::group([
+            'middleware' => 'can:mumble.view',
+        ], function () {
+
+            Route::get('/credentials', [
+                'as' => 'mumble.account.getCredential',
+                'uses' => 'MumbleController@getCredential',
+            ]);
+
+            Route::post('/reset', [
+                'as' => 'mumble.account.reset',
+                'uses' => 'MumbleController@resetPassword',
+            ]);
+
+        });
+    });
 });

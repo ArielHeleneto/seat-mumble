@@ -20,7 +20,7 @@
  */
 
 return [
-    'Mumble Management' => 'Mumble 账户管理',
+    'mumble_management' => 'Mumble 管理',
     'account' => '账户',
-    'Tagger'=>'后缀设置',
+    'tagger'=>'后缀设置',
 ];

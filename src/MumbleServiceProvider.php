@@ -68,9 +68,9 @@ class MumbleServiceProvider extends AbstractSeatPlugin
     private function add_publications()
     {
         $this->publishes([
-            __DIR__ . '/resources/css' => public_path('mumble/css'),
-            __DIR__ . '/resources/img' => public_path('mumble/img'),
-            __DIR__ . '/resources/js' => public_path('mumble/js'),
+            __DIR__ . '/resources/css' => public_path('web/css'),
+            __DIR__ . '/resources/img' => public_path('web/img'),
+            __DIR__ . '/resources/js' => public_path('web/js'),
         ], ['public', 'seat']);
     }
 
@@ -153,6 +153,6 @@ class MumbleServiceProvider extends AbstractSeatPlugin
      */
     public function getVersion(): string
     {
-        return '0.0.1-dev';
+        return config('mumble.config.version');;
     }
 }

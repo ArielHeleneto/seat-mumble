@@ -19,22 +19,25 @@
  */
 
 return [
-    'mumble' => [
+    '0mumble' => [
         'name' => 'Mumble Management',
         'permission' => 'mumble.view',
         'route_segment' => 'mumble',
         'icon' => 'fas fa-headset',
-        'entries'       => [
+        'label' => 'mumble::menu.mumble_management',
+        'entries' => [
             'account' => [
-                'name' => 'account',
+                'name' => 'Account',
+                'label' => 'mumble::menu.account',
                 'icon' => 'fas fa-address-card',
                 'route_segment' => 'mumble',
                 'route' => 'mumble.view',
                 'permission' => 'mumble.view'
             ],
             'tagger' => [
-                'name' => 'tagger',
+                'name' => 'Tagger',
                 'icon' => 'fas fa-list',
+                'label' => 'mumble::menu.tagger',
                 'route_segment' => 'mumble',
                 'route' => 'mumble.tagger',
                 'permission' => 'mumble.tag'

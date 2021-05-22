@@ -27,7 +27,7 @@ return [
         ],
         [
             'short' => 'zh-CN',
-            'full'  => '简体中文',
+            'full'  => 'Chinese (Simplified)',
         ],
     ],
 

@@ -21,7 +21,11 @@
 namespace ArielHeleneto\Seat\Mumble\Http\Controllers;
 
 use ArielHeleneto\Seat\Mumble\Helpers\Helper;
+use Illuminate\Database\Eloquent\Model;
 use Seat\Web\Http\Controllers\Controller;
+use Seat\Web\Models\User;
+use ArielHeleneto\Seat\Mumble\Models\mumble_user_setting;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Class UserController.
@@ -36,19 +40,37 @@ class MumbleController extends Controller
      */
     public function getCredential(): array
     {
+        $now = mumble_user_setting::firstOrCreate(
 
+            ['id' => Auth::id()],
+
+            ['username' => Auth::id(),'password' =>'12345678']
+
+        );
         return [
             'server_addr' => config('mumble_server_add') ?: '127.0.0.1:64738',
-            'username' => '$group_id',
-            'password' => '$mumble_user->password',
-            'certhash' => '',
-            'nickname' => 'nickname'
+            'username' => Auth::id(),
+            'password' => $now->password,
+            'certhash' => $now->certhash,
+            'nickname' => $now->nickname
         ];
     }
 
     public function resetPassword(): array
     {
+        $now = mumble_user_setting::firstOrCreate(
 
+            ['id' => Auth::id()],
+
+            ['username' => Auth::id()]
+
+        );
+        $now->password = Helper::randomString(20);
+        $now->save();
+        return ['ok' => true];
+    }
+    public function submit(): array
+    {
         return ['ok' => true];
     }
 }

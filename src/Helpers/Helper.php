@@ -20,13 +20,16 @@
 
 namespace ArielHeleneto\Seat\Mumble\Helpers;
 
-use Illuminate\Support\Str;
+use ArielHeleneto\Seat\Mumble\Models\mumble_user_setting;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\DB;
-use Seat\Eveapi\Models\Character\CharacterInfo;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Seat\Eveapi\Models\Corporation\CorporationInfo;
+use Seat\Eveapi\Models\Character\CharacterInfo;
 use Seat\Eveapi\Models\RefreshToken;
 use Seat\Web\Models\Group;
+use Seat\Web\Models\User;
+
 /**
  * Class Helper
  * @package WinterCo\Connector\Mumble\Helpers
@@ -37,19 +40,17 @@ class Helper
     public const NICKNAME_LENGTH_LIMIT = 64;
 
 
-
     /**
      * Filter character id that have a valid refresh token.
      *
      * @param Collection $characterIDs
      * @return array
      */
-    public static function getEnabledKey(Collection $users) : array
+    public static function getEnabledKey(Collection $users): array
     {
         // retrieve character ids with a valid refresh token
         return RefreshToken::whereIn('character_id', $users->pluck('id')->toArray())->pluck('character_id')->toArray();
     }
-
 
 
     /**
@@ -59,26 +60,22 @@ class Helper
      * @return string
      * @throws \Seat\Services\Exceptions\SettingException
      */
-    public static function buildNickname(MumbleUser $mumble_user): string
+    public static function buildNickname(User $mumble_user): string
     {
-        // retrieve a character related to the Discord relationship
-        $character = $mumble_user->group->main_character;
+
+        $character = $mumble_user->main_character()->name;
         if (is_null($character))
-            $character = $mumble_user->group->users->first()->character;
+            $character = 'fuck';
 
         // init the discord nickname to the character name
-        $expected_nickname = $mumble_user->group->main_character->name;
+        $expected_nickname = $mumble_user->main_character()->name;
 
-        $user_nickname = \Seat\Services\Settings\Profile::get('nickname', $mumble_user->group->id);
+        $user_nickname =  mumble_user_setting::find(Auth::id())->nickname;
 
         $expected_nickname = is_null($user_nickname) ? $expected_nickname : $user_nickname . '/' . $expected_nickname;
 
-        // in case ticker prefix is enabled, retrieve the corporation and prepend the ticker to the nickname
-        if (setting('winterco.mumble-connector.ticker', true)) {
-            $corporation = CorporationInfo::find($character->corporation_id);
-            $nickfmt = setting('winterco.mumble-connector.nickfmt', true) ?: '[%s] %s';
-            $expected_nickname = sprintf($nickfmt, $corporation ? $corporation->ticker : '????', $expected_nickname);
-        }
+        $corporation = CorporationInfo::find($character->corporation_id);
+        $expected_nickname = sprintf('[%s] %s', $corporation ? $corporation->ticker : '????', $expected_nickname);
 
         return Str::limit($expected_nickname, Helper::NICKNAME_LENGTH_LIMIT, '');
     }
@@ -86,7 +83,8 @@ class Helper
     public static function randomString(
         $length,
         $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    ) {
+    )
+    {
         $str = '';
         $max = mb_strlen($keyspace, '8bit') - 1;
         if ($max < 1) {

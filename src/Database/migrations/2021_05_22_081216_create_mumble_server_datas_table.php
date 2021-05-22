@@ -14,14 +14,13 @@ class CreateMumbleServerDatasTable extends Migration
     public function up()
     {
         Schema::create('mumble_server_data', function (Blueprint $table) {
-            $table->integer('user_id');
+            $table->integer('id');
             $table->char('username', 254);
-            $table->char('password', 254);
+            $table->char('password', 254)->default('12345678');
             $table->longtext('groups')->nullable();
             $table->char('display_name', 254);
             $table->char('cert_hash', 254)->nullable();
-            $table->primary(['user_id','username','display_name']);
-            $table->bigIncrements('id');
+            $table->primary(['id','username']);
             $table->timestamps();
         });
     }

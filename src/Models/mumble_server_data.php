@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace ArielHeleneto\Seat\Mumble\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

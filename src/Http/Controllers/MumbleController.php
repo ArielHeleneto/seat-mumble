@@ -41,11 +41,8 @@ class MumbleController extends Controller
     public function getCredential(): array
     {
         $now = mumble_user_setting::firstOrCreate(
-
             ['id' => Auth::id()],
-
             ['username' => Auth::id(),'password' =>'12345678']
-
         );
         return [
             'server_addr' => config('mumble_server_add') ?: '127.0.0.1:64738',
@@ -59,11 +56,8 @@ class MumbleController extends Controller
     public function resetPassword(): array
     {
         $now = mumble_user_setting::firstOrCreate(
-
             ['id' => Auth::id()],
-
             ['username' => Auth::id()]
-
         );
         $now->password = Helper::randomString(20);
         $now->save();

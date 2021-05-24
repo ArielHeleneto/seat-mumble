@@ -5,7 +5,6 @@
 @section('page_description', __('mumble::menu.account'))
 
 @push('head')
-    <link rel="stylesheet" type="text/css" href="{{ asset('web/css/wt-mumble-hook.css') }}"/>
 @endpush
 
 @section('full')

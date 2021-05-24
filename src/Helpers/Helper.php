@@ -62,22 +62,18 @@ class Helper
      */
     public static function buildNickname(User $mumble_user): string
     {
-
-        $character = $mumble_user->main_character()->name;
+        $character = CharacterInfo::where('character_id',$mumble_user->main_character_id)->first();
         if (is_null($character))
             $character = 'fuck';
-
+        $corporation_id=$character->corporation_history()->first()->corporation_id;
+        $corporation=CorporationInfo::find($corporation_id)->first();
         // init the discord nickname to the character name
-        $expected_nickname = $mumble_user->main_character()->name;
-
+        $expected_nickname = $character->name;
         $user_nickname =  mumble_user_setting::find(Auth::id())->nickname;
-
         $expected_nickname = is_null($user_nickname) ? $expected_nickname : $user_nickname . '/' . $expected_nickname;
 
-        $corporation = CorporationInfo::find($character->corporation_id);
         $expected_nickname = sprintf('[%s] %s', $corporation ? $corporation->ticker : '????', $expected_nickname);
-
-        return Str::limit($expected_nickname, Helper::NICKNAME_LENGTH_LIMIT, '');
+        return Str::limit($expected_nickname, Helper::NICKNAME_LENGTH_LIMIT, '').' ';
     }
 
     public static function randomString(

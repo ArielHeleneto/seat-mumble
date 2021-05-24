@@ -30,11 +30,6 @@ Route::group([
         'uses' => 'UserController@getAccount',
         'middleware' => 'can:mumble.view'
     ]);
-    Route::get('/tag', [
-        'as' => 'mumble.tagger',
-        'uses' => 'UserController@getAccount',
-        'middleware' => 'can:mumble.tag'
-    ]);
 
     //Account
     Route::group([
@@ -50,7 +45,7 @@ Route::group([
                 'uses' => 'MumbleController@getCredential',
             ]);
 
-            Route::post('/reset', [
+            Route::get('/reset', [
                 'as' => 'mumble.account.reset',
                 'uses' => 'MumbleController@resetPassword',
             ]);

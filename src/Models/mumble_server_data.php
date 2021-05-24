@@ -19,5 +19,5 @@ class mumble_server_data extends Model
     /**
      * @var bool
      */
-    public $incrementing = false;
+    public $incrementing = false;protected $fillable = ['user_id', 'username', 'password'];
 }

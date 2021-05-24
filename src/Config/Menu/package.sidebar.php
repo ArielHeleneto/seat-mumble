@@ -34,14 +34,6 @@ return [
                 'route' => 'mumble.view',
                 'permission' => 'mumble.view'
             ],
-            'tagger' => [
-                'name' => 'Tagger',
-                'icon' => 'fas fa-list',
-                'label' => 'mumble::menu.tagger',
-                'route_segment' => 'mumble',
-                'route' => 'mumble.tagger',
-                'permission' => 'mumble.tag'
-            ],
         ]
     ],
 ];

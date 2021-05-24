@@ -1,37 +1,29 @@
+![SeAT](https://i.imgur.com/aPPOxSK.png)
+
+<h2 align="center">
+SeAT: A Simple, EVE Online API Tool and Corporation Manager
+
+<br>
+
+**简体中文**|[English](./docs/en-US.md)
+
 # SeAT Mumble
 
-This plugin write for [SeAT](https://github.com/eveseat/seat) is providing to your instance a way to manage your Mumble with SeAT using both query and a grant permission system.
+这款插件为为您的 [SeAT](https://github.com/eveseat/seat) 提供了一种使用查询和授予权限系统管理 Mumble 的方法。
 
-## Requirements
+## 安装
 
-//TODO: Add requirements.
+### 常规安装
 
-## Installation
+首先，在 env 文件中添加参数 `MUMBLE_ADD`。该参数的值为您的语音服务器地址。
 
-### Package deployment
+在 SeAT 根目录下运行下列命令。
 
-#### Bare metal installation
-
-In your seat directory (by default:  `/var/www/seat`), type the following:
-
-```shell script
+```shell
 php artisan down
 composer require arielheleneto/seat-mumble
-
-php artisan vendor:publish --force --all
 php artisan migrate
 php artisan up
 ```
 
-Now, when you log into `SeAT` **with right Permission(s)**, you should see a `Connector` category in the sidebar.
-
-### Scheduler
-
-Authenticate on your SeAT instance with an admin account.
-You can use the built-in administrator user using `php artisan seat:admin:login` which will provide you proper permissions.
-
-On the sidebar, click on `Settings` and then click on `Schedule`. 
-
--   add `seat-connector:apply:policies` (recommended every 30 minutes)
-
-In order to grant access to `Identities` section, you must add permission `seat-connector.view` to a role you're assigning to your users.
+现在，当您以正确的权限 \*\* 登录 SeAT\`\*\* 时，您应该会在侧边栏中看到一个「Mumble 管理」类别。

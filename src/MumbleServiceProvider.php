@@ -33,7 +33,7 @@ class MumbleServiceProvider extends AbstractSeatPlugin
     {
         $this->add_routes();
 
-        $this->add_publications();
+        //$this->add_publications();
 
         $this->add_views();
 
@@ -143,7 +143,7 @@ class MumbleServiceProvider extends AbstractSeatPlugin
      */
     public function getPackagistVendorName(): string
     {
-        return 'Ariel Heleneto';
+        return 'arielheleneto';
     }
 
     /**

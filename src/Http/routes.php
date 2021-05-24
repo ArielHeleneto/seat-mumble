@@ -50,6 +50,11 @@ Route::group([
                 'uses' => 'MumbleController@resetPassword',
             ]);
 
+            Route::get('/refresh', [
+                'as' => 'mumble.account.refresh',
+                'uses' => 'MumbleController@refresh',
+            ]);
+
         });
     });
 });

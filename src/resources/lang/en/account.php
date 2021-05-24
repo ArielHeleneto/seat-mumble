@@ -20,18 +20,19 @@
 
 return [
     'title' => 'Mumble Account',
-    'reset_password' => 'Reset Password',
-    'credentials' => '登录凭据',
-    'server_ip' => '服务器地址',
-    'server_port' => '服务器端口',
-    'username' => '用户名',
-    'password' => '密码',
-    'certhash'=>'证书哈希',
-    'unset'=>'未设置',
-    'reset_password' => '重置密码',
-    'password_reset_confirm' => '您确定要重置密码吗？',
-    'password_reset_complete' => '密码已成功重置。',
-    'submit' => '提交',
-    'tip'=>'使用须知',
-    'tip_dec'=>'使用须知的内容'
+    'reset_password' => 'Reset password',
+    'credentials' => 'Credential',
+    'server_ip' => 'Server IP',
+    'server_port' => 'Server Port',
+    'username' => 'Username',
+    'password' => 'Password',
+    'certhash'=>'Cert Hash',
+    'unset'=>'Unset',
+    'password_reset_confirm' => 'Are you sure that you want to reset your password?',
+    'password_reset_complete' => 'Password has been successfully reseted',
+    'submit' => 'Submit',
+    'tip'=>'Tip',
+    'tip_dec'=>'Tips',
+    'password_refresh_complete'=>'Data has been successfully posted to server.',
+    'refresh'=>'Post to Server'
 ];

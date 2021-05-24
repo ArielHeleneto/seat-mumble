@@ -24,6 +24,16 @@
             </div>
         </div>
     </div>
+    <div class="row margin-bottom">
+        <div class="col-md-12">
+            <div class="pull-right">
+                <button type="button" class="btn btn-primary" id="refresh">
+                    <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+                    {{ __('mumble::account.refresh') }}
+                </button>
+            </div>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-md-12">
@@ -76,7 +86,7 @@
     <div class="row margin-bottom">
         <div class="col-md-12">
             <div class="pull-right">
-                <button type="button" class="btn btn-primary" id="submit">
+                <button type="button" class="btn btn-success" id="submit">
                     <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
                     {{ __('mumble::account.submit') }}
                 </button>
@@ -105,7 +115,7 @@
             if (!window.confirm('{{ __('mumble::account.password_reset_confirm') }}')) return;
             $.ajax({
                 url: '{{ route('mumble.account.reset') }}',
-                method: 'POST',
+                method: 'GET',
                 success: function (data) {
                     window.alert('{{ __('mumble::account.password_reset_complete')  }}');
                     location.reload()
@@ -115,8 +125,18 @@
 
         $('button.btn-primary').on('click', function () {
             $.ajax({
+                url: '{{ route('mumble.account.refresh') }}',
+                method: 'GET',
+                success: function (data) {
+                    window.alert('{{ __('mumble::account.password_refresh_complete')  }}');
+                }
+            });
+        });
+
+        $('button.btn-success').on('click', function () {
+            $.ajax({
                 url: '{{ route('mumble.account.reset') }}',
-                method: 'POST',
+                method: 'GET',
                 success: function (data) {
                     window.alert('{{ __('mumble::account.password_reset_complete')  }}');
                     location.reload()

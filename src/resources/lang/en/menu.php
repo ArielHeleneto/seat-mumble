@@ -22,5 +22,4 @@
 return [
     'mumble_management' => 'Mumble Management',
     'account' => 'Account',
-    'tagger'=>'Tagger',
 ];

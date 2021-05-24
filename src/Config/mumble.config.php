@@ -19,7 +19,6 @@
  */
 
 return [
-    'version' => '0.1.0-beta',
-    'mumble_server_add'=>env('MUMBLE_ADD', '127.0.0.1'),
-    'mumble_server_port'=>env('MUMBLE_PORT', '64371'),
+    'version' => '0.1.1-beta.1',
+    'mumble_server_add'=>env('MUMBLE_ADD', '127.0.0.1')
 ];

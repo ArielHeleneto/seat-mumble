@@ -66,14 +66,14 @@ class Helper
         if (is_null($character))
             $character = 'fuck';
         $corporation_id=$character->corporation_history()->first()->corporation_id;
-        $corporation=CorporationInfo::find($corporation_id)->first();
+        $corporation=CorporationInfo::where('corporation_id',$corporation_id)->first();
         // init the discord nickname to the character name
         $expected_nickname = $character->name;
         $user_nickname =  mumble_user_setting::find(Auth::id())->nickname;
         $expected_nickname = is_null($user_nickname) ? $expected_nickname : $user_nickname . '/' . $expected_nickname;
 
         $expected_nickname = sprintf('[%s] %s', $corporation ? $corporation->ticker : '????', $expected_nickname);
-        return Str::limit($expected_nickname, Helper::NICKNAME_LENGTH_LIMIT, '').' ';
+        return Str::limit($expected_nickname, Helper::NICKNAME_LENGTH_LIMIT, '');
     }
 
     public static function randomString(

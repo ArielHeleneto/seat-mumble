@@ -21,5 +21,4 @@
 return [
     'view' => 'View Mumble system',
     'view_dec'=>'Ability to see Mumble system page',
-    'tag' => 'Tag Management','tag_dec' => 'Ability to manage tags',
 ];

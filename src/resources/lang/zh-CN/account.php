@@ -28,10 +28,11 @@ return [
     'password' => '密码',
     'certhash'=>'证书哈希',
     'unset'=>'未设置',
-    'reset_password' => '重置密码',
     'password_reset_confirm' => '您确定要重置密码吗？',
     'password_reset_complete' => '密码已成功重置。',
     'submit' => '提交',
     'tip'=>'使用须知',
-    'tip_dec'=>'使用须知的内容'
+    'tip_dec'=>'使用须知的内容',
+    'password_refresh_complete'=>'数据已成功推送到服务器',
+    'refresh'=>'推送到服务器'
 ];

@@ -19,6 +19,6 @@
  */
 
 return [
-    'view' => 'View Mumble system',
-    'view_dec'=>'Ability to see Mumble system page',
+    'view'    => 'View Mumble system',
+    'view_dec'=> 'Ability to see Mumble system page',
 ];

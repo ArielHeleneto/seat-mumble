@@ -24,12 +24,9 @@ use Seat\Web\Http\Controllers\Controller;
 
 /**
  * Class UserController.
- *
- * @package Author\Seat\YourPackage\Http\Controllers
  */
 class UserController extends Controller
 {
-
     /**
      * @return \Illuminate\View\View
      */

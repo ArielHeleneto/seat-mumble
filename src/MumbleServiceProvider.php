@@ -24,8 +24,6 @@ use Seat\Services\AbstractSeatPlugin;
 
 /**
  * Class mumbleServiceProvider.
- *
- * @package ArielHeleneto\Seat\mumble
  */
 class MumbleServiceProvider extends AbstractSeatPlugin
 {
@@ -44,14 +42,14 @@ class MumbleServiceProvider extends AbstractSeatPlugin
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/Config/mumble.config.php', 'mumble.config');
-        $this->mergeConfigFrom(__DIR__ . '/Config/mumble.locale.php', 'mumble.locale');
+        $this->mergeConfigFrom(__DIR__.'/Config/mumble.config.php', 'mumble.config');
+        $this->mergeConfigFrom(__DIR__.'/Config/mumble.locale.php', 'mumble.locale');
 
         // Overload sidebar with your package menu entries
-        $this->mergeConfigFrom(__DIR__ . '/Config/Menu/package.sidebar.php', 'package.sidebar');
+        $this->mergeConfigFrom(__DIR__.'/Config/Menu/package.sidebar.php', 'package.sidebar');
 
         // Register generic permissions
-        $this->registerPermissions(__DIR__ . '/Config/Permissions/permission.php', 'mumble');
+        $this->registerPermissions(__DIR__.'/Config/Permissions/permission.php', 'mumble');
     }
 
     /**
@@ -59,7 +57,7 @@ class MumbleServiceProvider extends AbstractSeatPlugin
      */
     private function add_routes()
     {
-        $this->loadRoutesFrom(__DIR__ . '/Http/routes.php');
+        $this->loadRoutesFrom(__DIR__.'/Http/routes.php');
     }
 
     /**
@@ -68,9 +66,9 @@ class MumbleServiceProvider extends AbstractSeatPlugin
     private function add_publications()
     {
         $this->publishes([
-            __DIR__ . '/resources/css' => public_path('web/css'),
-            __DIR__ . '/resources/img' => public_path('web/img'),
-            __DIR__ . '/resources/js' => public_path('web/js'),
+            __DIR__.'/resources/css' => public_path('web/css'),
+            __DIR__.'/resources/img' => public_path('web/img'),
+            __DIR__.'/resources/js'  => public_path('web/js'),
         ], ['public', 'seat']);
     }
 
@@ -79,7 +77,7 @@ class MumbleServiceProvider extends AbstractSeatPlugin
      */
     private function add_translations()
     {
-        $this->loadTranslationsFrom(__DIR__ . '/resources/lang', 'mumble');
+        $this->loadTranslationsFrom(__DIR__.'/resources/lang', 'mumble');
     }
 
     /**
@@ -87,7 +85,7 @@ class MumbleServiceProvider extends AbstractSeatPlugin
      */
     private function add_views()
     {
-        $this->loadViewsFrom(__DIR__ . '/resources/views', 'mumble');
+        $this->loadViewsFrom(__DIR__.'/resources/views', 'mumble');
     }
 
     /**
@@ -95,15 +93,15 @@ class MumbleServiceProvider extends AbstractSeatPlugin
      */
     private function add_migrations()
     {
-        $this->loadMigrationsFrom(__DIR__ . '/database/migrations/');
+        $this->loadMigrationsFrom(__DIR__.'/database/migrations/');
     }
 
     /**
      * Return the plugin public name as it should be displayed into settings.
      *
      * @return string
-     * @example SeAT Web
      *
+     * @example SeAT Web
      */
     public function getName(): string
     {
@@ -126,8 +124,8 @@ class MumbleServiceProvider extends AbstractSeatPlugin
      * Return the plugin technical name as published on package manager.
      *
      * @return string
-     * @example web
      *
+     * @example web
      */
     public function getPackagistPackageName(): string
     {
@@ -138,8 +136,8 @@ class MumbleServiceProvider extends AbstractSeatPlugin
      * Return the plugin vendor tag as published on package manager.
      *
      * @return string
-     * @example eveseat
      *
+     * @example eveseat
      */
     public function getPackagistVendorName(): string
     {
@@ -153,6 +151,6 @@ class MumbleServiceProvider extends AbstractSeatPlugin
      */
     public function getVersion(): string
     {
-        return config('mumble.config.version');;
+        return config('mumble.config.version');
     }
 }

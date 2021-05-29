@@ -19,42 +19,39 @@
  */
 
 Route::group([
-    'namespace' => 'ArielHeleneto\Seat\Mumble\Http\Controllers',
+    'namespace'  => 'ArielHeleneto\Seat\Mumble\Http\Controllers',
     'middleware' => ['web', 'auth', 'locale'],
-    'prefix' => 'mumble'
+    'prefix'     => 'mumble',
 ], function () {
 
     // Menu & Views
     Route::get('/account', [
-        'as' => 'mumble.view',
-        'uses' => 'UserController@getAccount',
-        'middleware' => 'can:mumble.view'
+        'as'         => 'mumble.view',
+        'uses'       => 'UserController@getAccount',
+        'middleware' => 'can:mumble.view',
     ]);
 
     //Account
     Route::group([
         'middleware' => ['web', 'auth', 'locale'],
     ], function () {
-
         Route::group([
             'middleware' => 'can:mumble.view',
         ], function () {
-
             Route::get('/credentials', [
-                'as' => 'mumble.account.getCredential',
+                'as'   => 'mumble.account.getCredential',
                 'uses' => 'MumbleController@getCredential',
             ]);
 
             Route::get('/reset', [
-                'as' => 'mumble.account.reset',
+                'as'   => 'mumble.account.reset',
                 'uses' => 'MumbleController@resetPassword',
             ]);
 
             Route::get('/refresh', [
-                'as' => 'mumble.account.refresh',
+                'as'   => 'mumble.account.refresh',
                 'uses' => 'MumbleController@refresh',
             ]);
-
         });
     });
 });

@@ -20,20 +20,20 @@
 
 return [
     '0mumble' => [
-        'name' => 'Mumble Management',
-        'permission' => 'mumble.view',
+        'name'          => 'Mumble Management',
+        'permission'    => 'mumble.view',
         'route_segment' => 'mumble',
-        'icon' => 'fas fa-headset',
-        'label' => 'mumble::menu.mumble_management',
-        'entries' => [
+        'icon'          => 'fas fa-headset',
+        'label'         => 'mumble::menu.mumble_management',
+        'entries'       => [
             'account' => [
-                'name' => 'Account',
-                'label' => 'mumble::menu.account',
-                'icon' => 'fas fa-address-card',
+                'name'          => 'Account',
+                'label'         => 'mumble::menu.account',
+                'icon'          => 'fas fa-address-card',
                 'route_segment' => 'mumble',
-                'route' => 'mumble.view',
-                'permission' => 'mumble.view'
+                'route'         => 'mumble.view',
+                'permission'    => 'mumble.view',
             ],
-        ]
+        ],
     ],
 ];

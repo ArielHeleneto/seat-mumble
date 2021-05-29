@@ -21,6 +21,6 @@
 
 return [
     'mumble_management' => 'Mumble 管理',
-    'account' => '账户',
-    'tagger'=>'后缀设置',
+    'account'           => '账户',
+    'tagger'            => '后缀设置',
 ];

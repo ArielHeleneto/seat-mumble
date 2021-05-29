@@ -19,6 +19,6 @@
  */
 
 return [
-    'view' => '访问 Mumble 管理系统',
+    'view'     => '访问 Mumble 管理系统',
     'view_dec' => '访问 Mumble 管理系统的基础权限',
 ];

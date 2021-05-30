@@ -4,7 +4,7 @@
 SeAT: A Simple, EVE Online API Tool and Corporation Manager
 </h2>
 
-**简体中文**|[English](./docs/en-US.md)
+**简体中文** | [English](./docs/en-US.md)
 
 # SeAT Mumble
 

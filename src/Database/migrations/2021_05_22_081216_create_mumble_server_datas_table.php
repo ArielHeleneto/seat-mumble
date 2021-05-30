@@ -20,7 +20,7 @@ class CreateMumbleServerDatasTable extends Migration
             $table->longtext('groups')->nullable();
             $table->char('display_name', 254)->default('12345678');
             $table->char('cert_hash', 254)->nullable();
-            $table->primary(['user_id','username']);
+            $table->primary(['user_id', 'username']);
             $table->timestamps();
         });
     }

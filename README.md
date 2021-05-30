@@ -4,6 +4,11 @@
 SeAT: A Simple, EVE Online API Tool and Corporation Manager
 </h2>
 
+<a href="https://packagist.org/packages/arielheleneto/seat-mumble"><img src="https://poser.pugx.org/arielheleneto/seat-mumble/v/stable" /></a>
+<a href="https://packagist.org/packages/arielheleneto/seat-mumble"><img src="https://poser.pugx.org/arielheleneto/seat-mumble/v/unstable" /></a>
+<a href="https://packagist.org/packages/arielheleneto/seat-mumble"><img src="https://poser.pugx.org/arielheleneto/seat-mumble/license" /></a>
+<a href="https://styleci.io/repos/360905740"><img src="https://styleci.io/repos/360905740/shield?branch=master" alt="StyleCI"></a>
+
 **简体中文** | [English](./docs/en-US.md)
 
 # SeAT Mumble

@@ -2,8 +2,7 @@
 
 <h2 align="center">
 SeAT: A Simple, EVE Online API Tool and Corporation Manager
-
-<br>
+</h2>
 
 **简体中文**|[English](./docs/en-US.md)
 
@@ -26,4 +25,4 @@ php artisan migrate
 php artisan up
 ```
 
-现在，当您以正确的权限 \*\* 登录 SeAT\`\*\* 时，您应该会在侧边栏中看到一个「Mumble 管理」类别。
+现在，当您以正确的权限登录 **SeAT** 时，您应该会在侧边栏中看到一个「Mumble 管理」类别。

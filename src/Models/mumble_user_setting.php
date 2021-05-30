@@ -44,11 +44,12 @@ class mumble_user_setting extends Model
             $fuck->groups = $grou;
             $fuck->display_name = Helper::buildNickname(User::find(Auth::id()));
             foreach ($ro as $meige) {
-                if ($meige->description != NULL) {
+                if ($meige->description != null) {
                     $fuck->display_name = $fuck->display_name . '[' . $meige->description . ']';
                 }
             }
             $fuck->save();
+
             return $fuck;
         });
         static::bootTraits();

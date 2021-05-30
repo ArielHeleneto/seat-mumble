@@ -103,7 +103,6 @@ class MumbleServiceProvider extends AbstractSeatPlugin
      *
      * @return string
      * @example SeAT Web
-     *
      */
     public function getName(): string
     {
@@ -127,7 +126,6 @@ class MumbleServiceProvider extends AbstractSeatPlugin
      *
      * @return string
      * @example web
-     *
      */
     public function getPackagistPackageName(): string
     {
@@ -139,7 +137,6 @@ class MumbleServiceProvider extends AbstractSeatPlugin
      *
      * @return string
      * @example eveseat
-     *
      */
     public function getPackagistVendorName(): string
     {
@@ -153,6 +150,6 @@ class MumbleServiceProvider extends AbstractSeatPlugin
      */
     public function getVersion(): string
     {
-        return config('mumble.config.version');;
+        return config('mumble.config.version');
     }
 }

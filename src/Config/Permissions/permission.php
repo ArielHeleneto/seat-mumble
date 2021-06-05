@@ -23,5 +23,5 @@ return [
     'view' => [
         'label' => 'mumble::permission.view',
         'description' => 'mumble::permission.view_dec',
-    ]
+    ],
 ];

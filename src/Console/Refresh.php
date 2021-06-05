@@ -2,9 +2,9 @@
 
 namespace ArielHeleneto\Seat\Mumble\Console;
 
-use Illuminate\Console\Command;
 use ArielHeleneto\Seat\Mumble\Models\mumble_server_data;
 use ArielHeleneto\Seat\Mumble\Models\mumble_user_setting;
+use Illuminate\Console\Command;
 use Seat\Web\Models\User;
 
 class Refresh extends Command

@@ -21,12 +21,11 @@
 namespace ArielHeleneto\Seat\Mumble\Http\Controllers;
 
 use ArielHeleneto\Seat\Mumble\Helpers\Helper;
-use Illuminate\Database\Eloquent\Model;
+use ArielHeleneto\Seat\Mumble\Models\mumble_server_data;
+use ArielHeleneto\Seat\Mumble\Models\mumble_user_setting;
+use Illuminate\Support\Facades\Auth;
 use Seat\Web\Http\Controllers\Controller;
 use Seat\Web\Models\User;
-use ArielHeleneto\Seat\Mumble\Models\mumble_user_setting;
-use ArielHeleneto\Seat\Mumble\Models\mumble_server_data;
-use Illuminate\Support\Facades\Auth;
 
 /**
  * Class UserController.
@@ -35,7 +34,6 @@ use Illuminate\Support\Facades\Auth;
  */
 class MumbleController extends Controller
 {
-
     /**
      * @return array
      */
@@ -43,14 +41,15 @@ class MumbleController extends Controller
     {
         $now = mumble_user_setting::firstOrCreate(
             ['id' => Auth::id()],
-            ['username' => Auth::id(),'password' =>'12345678']
+            ['username' => Auth::id(), 'password' =>'12345678']
         );
+
         return [
             'server_addr' => config('mumble.config.mumble_server_add') ?: '127.0.0.1:64738',
             'username' => Auth::id(),
             'password' => $now->password,
             'certhash' => $now->certhash,
-            'nickname' => $now->nickname
+            'nickname' => $now->nickname,
         ];
     }
 
@@ -62,6 +61,7 @@ class MumbleController extends Controller
         );
         $now->password = Helper::randomString(20);
         $now->save();
+
         return ['ok' => true];
     }
 
@@ -69,7 +69,7 @@ class MumbleController extends Controller
     {
         $now = mumble_user_setting::firstOrCreate(
             ['id' => Auth::id()],
-            ['username' => Auth::id(),'password' =>'12345678']
+            ['username' => Auth::id(), 'password' =>'12345678']
         );
         $fuck = mumble_server_data::firstOrCreate(
             ['user_id' => $now->id],
@@ -84,11 +84,12 @@ class MumbleController extends Controller
         $fuck->groups = $grou;
         $fuck->display_name = Helper::buildNickname(User::find(Auth::id()));
         foreach ($ro as $meige) {
-            if ($meige->description != NULL) {
+            if ($meige->description != null) {
                 $fuck->display_name = $fuck->display_name . '[' . $meige->description . ']';
             }
         }
         $fuck->save();
+
         return ['ok' => true];
     }
 

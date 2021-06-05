@@ -21,14 +21,14 @@
 Route::group([
     'namespace' => 'ArielHeleneto\Seat\Mumble\Http\Controllers',
     'middleware' => ['web', 'auth', 'locale'],
-    'prefix' => 'mumble'
+    'prefix' => 'mumble',
 ], function () {
 
     // Menu & Views
     Route::get('/account', [
         'as' => 'mumble.view',
         'uses' => 'UserController@getAccount',
-        'middleware' => 'can:mumble.view'
+        'middleware' => 'can:mumble.view',
     ]);
 
     //Account

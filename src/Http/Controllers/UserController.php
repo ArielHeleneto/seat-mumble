@@ -29,6 +29,7 @@ use Seat\Web\Http\Controllers\Controller;
  */
 class UserController extends Controller
 {
+
     /**
      * @return \Illuminate\View\View
      */

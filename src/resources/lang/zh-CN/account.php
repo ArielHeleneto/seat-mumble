@@ -34,5 +34,5 @@ return [
     'tip'=>'使用须知',
     'tip_dec'=>'使用须知的内容',
     'password_refresh_complete'=>'数据已成功推送到服务器',
-    'refresh'=>'推送到服务器',
+    'refresh'=>'推送到服务器'
 ];

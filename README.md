@@ -2,14 +2,10 @@
 
 <h2 align="center">
 SeAT: A Simple, EVE Online API Tool and Corporation Manager
-</h2>
 
-<a href="https://packagist.org/packages/arielheleneto/seat-mumble"><img src="https://poser.pugx.org/arielheleneto/seat-mumble/v/stable" /></a>
-<a href="https://packagist.org/packages/arielheleneto/seat-mumble"><img src="https://poser.pugx.org/arielheleneto/seat-mumble/v/unstable" /></a>
-<a href="https://packagist.org/packages/arielheleneto/seat-mumble"><img src="https://poser.pugx.org/arielheleneto/seat-mumble/license" /></a>
-<a href="https://styleci.io/repos/360905740"><img src="https://styleci.io/repos/360905740/shield?branch=master" alt="StyleCI"></a>
+<br>
 
-**简体中文** | [English](./docs/en-US.md)
+**简体中文**|[English](./docs/en-US.md)
 
 # SeAT Mumble
 
@@ -30,4 +26,4 @@ php artisan migrate
 php artisan up
 ```
 
-现在，当您以正确的权限登录 **SeAT** 时，您应该会在侧边栏中看到一个「Mumble 管理」类别。
+现在，当您以正确的权限 \*\* 登录 SeAT\`\*\* 时，您应该会在侧边栏中看到一个「Mumble 管理」类别。

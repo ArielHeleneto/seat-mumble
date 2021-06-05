@@ -35,6 +35,8 @@ class MumbleServiceProvider extends AbstractSeatPlugin
 
         //$this->add_publications();
 
+        $this->add_commands();
+
         $this->add_views();
 
         $this->add_translations();
@@ -98,11 +100,18 @@ class MumbleServiceProvider extends AbstractSeatPlugin
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations/');
     }
 
+    private function add_commands()
+    {
+        $this->commands([
+            Console\Refresh::class,
+        ]);
+    }
     /**
      * Return the plugin public name as it should be displayed into settings.
      *
      * @return string
      * @example SeAT Web
+     *
      */
     public function getName(): string
     {
@@ -126,6 +135,7 @@ class MumbleServiceProvider extends AbstractSeatPlugin
      *
      * @return string
      * @example web
+     *
      */
     public function getPackagistPackageName(): string
     {
@@ -137,6 +147,7 @@ class MumbleServiceProvider extends AbstractSeatPlugin
      *
      * @return string
      * @example eveseat
+     *
      */
     public function getPackagistVendorName(): string
     {
@@ -150,6 +161,6 @@ class MumbleServiceProvider extends AbstractSeatPlugin
      */
     public function getVersion(): string
     {
-        return config('mumble.config.version');
+        return config('mumble.config.version');;
     }
 }

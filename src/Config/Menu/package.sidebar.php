@@ -32,8 +32,8 @@ return [
                 'icon' => 'fas fa-address-card',
                 'route_segment' => 'mumble',
                 'route' => 'mumble.view',
-                'permission' => 'mumble.view',
+                'permission' => 'mumble.view'
             ],
-        ],
+        ]
     ],
 ];

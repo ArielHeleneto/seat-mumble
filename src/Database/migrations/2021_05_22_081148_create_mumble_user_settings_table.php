@@ -20,7 +20,7 @@ class CreateMumbleUserSettingsTable extends Migration
             $table->char('nickname', 254)->nullable();
             $table->char('certhash', 254)->nullable();
             $table->timestamps();
-            $table->primary(['id', 'username']);
+            $table->primary(['id','username']);
         });
     }
 

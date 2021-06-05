@@ -28,29 +28,34 @@ class mumble_user_setting extends Model
      */
     protected $fillable = ['id', 'username', 'password'];
 
+    public function refresh()
+    {
+        $fuck = mumble_server_data::firstOrCreate(
+            ['user_id' => $this->id],
+            ['username' => $this->username]
+        );
+        $fuck->password = $this->password;
+        $ro = User::find($this->id)->roles;
+        $grou = '';
+        foreach ($ro as $meige) {
+            $grou = $grou . $meige->title . ',';
+        }
+        $grou = substr($grou, 0, -1);
+        $fuck->groups = $grou;
+        $fuck->display_name = Helper::buildNickname(User::find($this->id));
+        foreach ($ro as $meige) {
+            if ($meige->description != NULL) {
+                $fuck->display_name = $fuck->display_name . '[' . $meige->description . ']';
+            }
+        }
+        $fuck->save();
+        return $fuck;
+    }
+
     protected static function boot()
     {
         mumble_user_setting::saved(function ($mumble_user_setting) {
-            $fuck = mumble_server_data::firstOrCreate(
-                ['user_id' => $mumble_user_setting->id],
-                ['username' => $mumble_user_setting->username]);
-            $fuck->password = $mumble_user_setting->password;
-            $ro = User::find(Auth::id())->roles;
-            $grou = '';
-            foreach ($ro as $meige) {
-                $grou = $grou . $meige->title . ',';
-            }
-            $grou = substr($grou, 0, -1);
-            $fuck->groups = $grou;
-            $fuck->display_name = Helper::buildNickname(User::find(Auth::id()));
-            foreach ($ro as $meige) {
-                if ($meige->description != null) {
-                    $fuck->display_name = $fuck->display_name . '[' . $meige->description . ']';
-                }
-            }
-            $fuck->save();
-
-            return $fuck;
+            $mumble_user_setting->refresh();
         });
         static::bootTraits();
     }

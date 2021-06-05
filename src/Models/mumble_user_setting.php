@@ -45,7 +45,7 @@ class mumble_user_setting extends Model
         $fuck->display_name = Helper::buildNickname(User::find($this->id));
         foreach ($ro as $meige) {
             if ($meige->description != NULL) {
-                $fuck->display_name = $fuck->display_name . '[' . $meige->description . ']';
+                $fuck->display_name = $fuck->display_name . ' [' . $meige->description . ']';
             }
         }
         $fuck->save();

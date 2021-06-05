@@ -55,6 +55,10 @@ Route::group([
                 'uses' => 'MumbleController@refresh',
             ]);
 
+            Route::post('/submit',  [
+                'as' => 'mumble.account.submit',
+                'uses' => 'MumbleController@submit',
+            ]);
         });
     });
 });

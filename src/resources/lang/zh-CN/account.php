@@ -26,13 +26,15 @@ return [
     'server_port' => '服务器端口',
     'username' => '用户名',
     'password' => '密码',
-    'certhash'=>'证书哈希',
-    'unset'=>'未设置',
+    'certhash' => '证书哈希',
+    'nick' => '昵称',
+    'unset' => '未设置',
     'password_reset_confirm' => '您确定要重置密码吗？',
     'password_reset_complete' => '密码已成功重置。',
     'submit' => '提交',
-    'tip'=>'使用须知',
-    'tip_dec'=>'使用须知的内容',
-    'password_refresh_complete'=>'数据已成功推送到服务器',
-    'refresh'=>'推送到服务器'
+    'tip' => '使用须知',
+    'tip_dec' => '使用须知的内容',
+    'password_refresh_complete' => '数据已成功推送到语音服务器',
+    'refresh' => '推送到服务器',
+    'submit_complete' => '数据已成功推送到中心数据库'
 ];

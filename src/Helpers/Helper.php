@@ -31,13 +31,12 @@ use Exception;
 
 /**
  * Class Helper
- * @package WinterCo\Connector\Mumble\Helpers
+ * @package ArielHeleneto\Seat\Mumble
  */
 class Helper
 {
 
     public const NICKNAME_LENGTH_LIMIT = 64;
-
 
     /**
      * Filter character id that have a valid refresh token.

@@ -4,14 +4,14 @@
 @section('page_header', __('mumble::menu.mumble_management'))
 @section('page_description', __('mumble::menu.account'))
 
-@push('head')
-@endpush
+    @push('head')
+    @endpush
 
 @section('full')
 
     <div id="user-alert" class="callout callout-danger hidden">
-        <h4>{{__('mumble::account.tip')}}</h4>
-        <p>{{__('mumble::account.tip_dec')}}</p>
+        <h4>{{ __('mumble::account.tip') }}</h4>
+        <p>{{ __('mumble::account.tip_dec') }}</p>
     </div>
 
     <div class="row margin-bottom">
@@ -49,31 +49,31 @@
                         <div class="col-md-12">
                             <table class="table table-condensed table-hover" id="credentials">
                                 <tbody>
-                                <tr>
-                                    <td><b>{{ __('mumble::account.server_ip') }}</b></td>
-                                    <td><input readonly id="server-ip" style="width: 100%;"></td>
-                                </tr>
-                                <tr>
-                                    <td><b>{{ __('mumble::account.server_port') }}</b></td>
-                                    <td><input readonly id="server-port" style="width: 100%;"></td>
-                                </tr>
-                                <tr>
-                                    <td><b>{{ __('mumble::account.username') }}</b></td>
-                                    <td><input readonly id="username" style="width: 100%;"></td>
-                                </tr>
-                                <tr>
-                                    <td><b>{{ __('mumble::account.password') }}</b></td>
-                                    <td><input id="password" type="password" onfocusin="this.type='text';"
-                                               onfocusout="this.type='password';" style="width: 100%;"></td>
-                                </tr>
-                                <tr>
-                                    <td><b>{{ __('mumble::account.certhash') }}</b></td>
-                                    <td><input id="certhash" style="width: 100%;"></td>
-                                </tr>
-                                <tr>
-                                    <td><b>{{ __('mumble::account.nick') }}</b></td>
-                                    <td><input id="nick" style="width: 100%;"></td>
-                                </tr>
+                                    <tr>
+                                        <td><b>{{ __('mumble::account.server_ip') }}</b></td>
+                                        <td><input readonly id="server-ip" style="width: 100%;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>{{ __('mumble::account.server_port') }}</b></td>
+                                        <td><input readonly id="server-port" style="width: 100%;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>{{ __('mumble::account.username') }}</b></td>
+                                        <td><input readonly id="username" style="width: 100%;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>{{ __('mumble::account.password') }}</b></td>
+                                        <td><input id="password" type="password" onfocusin="this.type='text';"
+                                                onfocusout="this.type='password';" style="width: 100%;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>{{ __('mumble::account.certhash') }}</b></td>
+                                        <td><input id="certhash" style="width: 100%;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>{{ __('mumble::account.nick') }}</b></td>
+                                        <td><input id="nickname" style="width: 100%;"></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -101,47 +101,55 @@
         $.ajax({
             url: '{{ route('mumble.account.getCredential') }}',
             method: 'GET',
-            success: function (data) {
-                $('#server-ip').val(data.server_addr.split(':')[0] || '');
+            success: function(data) {
+                $('#server-ip').val(data.server_addr.split(':')[0]);
                 $('#server-port').val(data.server_addr.split(':')[1] || '64738');
                 $('#username').val(data.username);
                 $('#password').val(data.password);
-                $('#certhash').val(data.certhash || {{__('mumble::account.unset')}});
-                $('#nickname').val(data.nickname || {{__('mumble::account.unset')}});
+                $('#certhash').val(data.certhash ? data.certhash :
+                    {{ __('mumble::account.unset') }});
+                $('#nickname').val(data.nickname ? data.nickname :
+                    {{ __('mumble::account.unset') }});
             }
         });
 
-        $('button.btn-danger').on('click', function () {
+        $('button.btn-danger').on('click', function() {
             if (!window.confirm('{{ __('mumble::account.password_reset_confirm') }}')) return;
             $.ajax({
                 url: '{{ route('mumble.account.reset') }}',
                 method: 'GET',
-                success: function (data) {
-                    window.alert('{{ __('mumble::account.password_reset_complete')  }}');
+                success: function(data) {
+                    window.alert('{{ __('mumble::account.password_reset_complete') }}');
                     location.reload()
                 }
             });
         });
 
-        $('button.btn-primary').on('click', function () {
+        $('button.btn-primary').on('click', function() {
             $.ajax({
                 url: '{{ route('mumble.account.refresh') }}',
                 method: 'GET',
-                success: function (data) {
-                    window.alert('{{ __('mumble::account.password_refresh_complete')  }}');
+                success: function(data) {
+                    window.alert('{{ __('mumble::account.password_refresh_complete') }}');
                 }
             });
         });
 
-        $('button.btn-success').on('click', function () {
+        $('button.btn-success').on('click', function() {
             $.ajax({
-                url: '{{ route('mumble.account.reset') }}',
-                method: 'GET',
-                success: function (data) {
-                    window.alert('{{ __('mumble::account.password_reset_complete')  }}');
+                url: '{{ route('mumble.account.submit') }}',
+                method: 'POST',
+                data: {
+                    password: document.getElementById("password").value,
+                    certhash: document.getElementById("certhash").value,
+                    nickname: document.getElementById("nickname").value
+                },
+                success: function(data) {
+                    window.alert('{{ __('mumble::account.submit_complete') }}');
                     location.reload()
                 }
             });
         });
+
     </script>
 @endpush

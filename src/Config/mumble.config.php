@@ -19,6 +19,6 @@
  */
 
 return [
-    'version' => '0.1.2-beta.1',
+    'version' => '0.1.2-beta.2',
     'mumble_server_add' => env('MUMBLE_ADD', '127.0.0.1')
 ];

@@ -34,5 +34,5 @@ return [
     'tip'=>'Tip',
     'tip_dec'=>'Tips',
     'password_refresh_complete'=>'Data has been successfully posted to server.',
-    'refresh'=>'Post to Server'
+    'refresh'=>'Post to Server',
 ];

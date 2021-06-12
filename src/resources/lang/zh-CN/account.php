@@ -1,7 +1,7 @@
 <?php
 /*
  * This file is part of SeAT.
- * Copyright (C) 2021 to 2021 Ariel Heleneto<xiongjiahui2004@foxmail.com>.
+ * Copyright (C) 2021 to 2021 Ariel Heleneto<ArielHeleneto@outlook.com>.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ return [
     'submit' => '提交',
     'tip' => '使用须知',
     'tip_dec' => '使用须知的内容',
-    'password_refresh_complete' => '数据已成功推送到语音服务器',
+    'password_refresh_complete' => '数据已成功推送到语音服务器。',
     'refresh' => '推送到服务器',
-    'submit_complete' => '数据已成功推送到中心数据库'
+    'submit_complete' => '数据已成功推送到中心数据库。'
 ];

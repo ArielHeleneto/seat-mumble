@@ -1,7 +1,7 @@
 <?php
 /*
  * This file is part of SeAT.
- * Copyright (C) 2021 to 2021 Ariel Heleneto<xiongjiahui2004@foxmail.com>.
+ * Copyright (C) 2021 to 2021 Ariel Heleneto<ArielHeleneto@outlook.com>.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,14 +20,14 @@
 
 namespace ArielHeleneto\Seat\Mumble\Helpers;
 
-use ArielHeleneto\Seat\Mumble\Models\mumble_user_setting;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Str;
-use Seat\Eveapi\Models\Corporation\CorporationInfo;
-use Seat\Eveapi\Models\Character\CharacterInfo;
-use Seat\Eveapi\Models\RefreshToken;
-use Seat\Web\Models\User;
 use Exception;
+use Seat\Web\Models\User;
+use Illuminate\Support\Str;
+use Illuminate\Support\Collection;
+use Seat\Eveapi\Models\RefreshToken;
+use Seat\Eveapi\Models\Character\CharacterInfo;
+use Seat\Eveapi\Models\Corporation\CorporationInfo;
+use ArielHeleneto\Seat\Mumble\Models\mumble_user_setting;
 
 /**
  * Class Helper

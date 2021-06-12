@@ -1,7 +1,7 @@
 <?php
 /*
  * This file is part of SeAT.
- * Copyright (C) 2021 to 2021 Ariel Heleneto<xiongjiahui2004@foxmail.com>.
+ * Copyright (C) 2021 to 2021 Ariel Heleneto<ArielHeleneto@outlook.com>.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,5 +20,5 @@
 
 return [
     'view' => 'View Mumble system',
-    'view_dec'=>'Ability to see Mumble system page',
+    'view_dec' => 'Ability to see Mumble system page',
 ];

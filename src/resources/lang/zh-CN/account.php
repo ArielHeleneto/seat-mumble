@@ -36,5 +36,5 @@ return [
     'tip_dec' => '使用须知的内容',
     'password_refresh_complete' => '数据已成功推送到语音服务器。',
     'refresh' => '推送到服务器',
-    'submit_complete' => '数据已成功推送到中心数据库。'
+    'submit_complete' => '数据已成功推送到中心数据库。',
 ];

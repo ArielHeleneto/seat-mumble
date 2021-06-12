@@ -20,5 +20,5 @@
 
 return [
     'mumble_management' => 'Mumble Management',
-    'account' => 'Account'
+    'account' => 'Account',
 ];
